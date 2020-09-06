@@ -6,6 +6,8 @@ import {
   displayBudget,
   deleteListItem,
   displayPercentages,
+  displayMonth,
+  changedType,
 } from "./src/ui_controller.js";
 
 import {
@@ -33,6 +35,8 @@ let setupEventListeners = () => {
   document
     .querySelector(DOM.container)
     .addEventListener("click", ctrlDeleteItem);
+
+  document.querySelector(DOM.inputType).addEventListener("change", changedType);
 };
 
 let updateBudget = () => {
@@ -106,6 +110,8 @@ let init = () => {
     totalExp: 0,
     percentage: 0,
   });
+
+  displayMonth();
 };
 
 init();
